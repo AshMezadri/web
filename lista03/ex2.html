@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Crie uma página HTML com campos de input de dados de diferentes tipos e um paragrafo antes de cada
+tipos de campo informando a finalidade do tipos e principais atributos-->
+
+    <h1>Campos de input</h1>
+    <hr />
+
+    <form action="" method="post">
+      <fieldset>
+        <p>
+          <b>Text:</b> um campo de texto curto, normalmente contando com os
+          atributos maxlength e minlength, para definir a máxima e a mínima
+          quantidade de caracteres do texto.
+        </p>
+        <label for="texto">Exemplo de texto (5 a 10 caracteres)</label>
+        <input
+          type="text"
+          id="texto"
+          name="texto"
+          minlength="5"
+          maxlength="10"
+        />
+
+        <hr />
+
+        <p><b>Button:</b> um simples botão, meio triste até</p>
+        <input type="button" value="Botão" />
+
+        <hr />
+
+        <p>
+          <b>Checkbox:</b> Uma checkbox, podendo ser marcada previamente usando
+          o atributo checked. É necessário usar a tag div para criar as boxes
+        </p>
+        <fieldset>
+          <legend>Escolha uma cor:</legend>
+
+          <div>
+            <input type="checkbox" name="vermelho" id="vermelho" checked />
+            <label for="vermelho">Vermelho</label>
+          </div>
+          <div>
+            <input type="checkbox" name="azul" id="azul" name="azul" />
+            <label for="azul">Azul</label>
+          </div>
+          <div>
+            <input type="checkbox" name="preto" id="preto" name="preto" />
+            <label for="preto">Preto</label>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <p>
+          <b>Date:</b> Input simples de data, com dia, mês e ano. Pode ter os
+          atributos de min, max e value, por exemplo.
+        </p>
+        <input
+          type="date"
+          name="data"
+          id="data"
+          min="1900-01-01"
+          max="2023-08-20"
+        />
+
+        <hr />
+
+        <p>
+          <b>Datetime(local):</b> Input de data e horário(hora, minuto, segundo)
+          sem fuso horário
+        </p>
+        <input
+          type="datetime-local"
+          name="datetime"
+          id="datetime"
+          min="1900-01-01T00:00"
+          max="2023-08-20T00:00"
+        />
+
+        <hr />
+
+        <p><b>Email:</b> Campo de texto para um endereço email</p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          pattern=".+@servidor\.com"
+        />
+
+        <hr />
+
+        <p>
+          <b>File:</b> Input para permitir o usuário anexar um arquivo. Se
+          utiliza o atributo accept para definir os tipos de arquivo a serem
+          recebidos
+        </p>
+        <input
+          type="file"
+          name="file"
+          id="file"
+          accept="image/png, image/jpeg"
+        />
+
+        <hr />
+
+        <p>
+          <b>Number:</b> Controle de números. Só isso. Pode ter atributos de max
+          e min
+        </p>
+        <input type="number" name="num" id="num" min="1" max="1000000" />
+
+        <hr />
+
+        <p>
+          <b>Password:</b> Campo de texto em sigilo, para inserir senhas. Com o
+          atributo maxlength e minlength é possível especificar o tamanho máximo
+          e mínimo do valor inserido
+        </p>
+        <input
+          type="password"
+          name="senha"
+          id="senha"
+          minlength="8"
+          maxlength="12"
+          required
+        />
+
+        <hr />
+
+        <p>
+          <b>Radio:</b> Botão para escolher uma opção. Necessita o atributo
+          value para definir o valor do item. O atributo checked pode ser usado
+          também.
+        </p>
+        <fieldset>
+          <legend>Escolha um:</legend>
+
+          <div>
+            <input type="radio" name="animal" id="gato" value="gato" checked />
+            <label for="gato">Gato</label>
+          </div>
+
+          <div>
+            <input type="radio" name="animal" id="cao" value="cao" />
+            <label for="cao">Cachorro</label>
+          </div>
+
+          <div>
+            <input type="radio" name="animal" id="rato" value="rato" />
+            <label for="rato">Rato</label>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <p><b>Reset:</b> Faz os atributos e valores do forms serem resetados</p>
+        <input type="reset" value="Reset" />
+
+        <hr />
+
+        <p>
+          <b>Range:</b> Sla algum controle acho? Não precisa de valores
+          específicos
+        </p>
+        <input type="range" name="teste" id="teste" min="0" max="10" />
+      </fieldset>
+    </form>
+  </body>
+</html>

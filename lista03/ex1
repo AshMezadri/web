@@ -1,0 +1,5 @@
+1- Em um elemento formulário qual a finalidade do atributo action e method explique se precisar com
+gráficos. 
+
+R: O atributo action é utilizado para informar a URL a ser utilizada para a submissão fo forms.
+O atributo method especifica o método de submissão dos dados.

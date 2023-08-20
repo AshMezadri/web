@@ -1,0 +1,1 @@
+O `<button>` éé usado para criar um botão interativo dentro de um formulário. O `<input type="button">` é mais simples, geralmente com apenas texto, mas ainda pode ser estilizado e possui manipulação de eventos. O `<input type="submit">` é dedicado ao envio de dados de formulários ao servidor e também pode ser estilizado.
