@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+  "clebe toninho"
+  "v1         v2"
+  "footer footer"
+  ;
+}
+
+.box {
+  border: 1px solid grey;
+  text-align: center;
+  font-size: 30pt;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px gray;
+  transition: all is ease-in-out;
+}
+
+#box-1{
+    grid-area: clebe;
+}
+#box-2{
+    grid-area: toninho;
+}
+#box-3{
+    grid-area: v1;
+}
+#box-4{
+    grid-area: v2;
+}
+#box-5{
+    grid-area: footer;
+}
