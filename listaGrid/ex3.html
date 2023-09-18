@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .box {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        transition: flex 0.5s;
+        cursor: pointer;
+        background-color: black;
+      }
+
+      #box1 {
+        background-image: url("imagem1.jpg");
+      }
+
+      #box2 {
+        background-image: url("imagem2.jpg");
+      }
+
+      #box3 {
+        background-image: url("imagem3.jpg");
+      }
+
+      #box4 {
+        background-image: url("imagem4.jpg");
+      }
+
+      #box5 {
+        background-image: url("imagem5.jpg");
+      }
+
+      .box:hover {
+        flex: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box1"></div>
+      <div class="box" id="box2"></div>
+      <div class="box" id="box3"></div>
+      <div class="box" id="box4"></div>
+      <div class="box" id="box5"></div>
+    </div>
+  </body>
+</html>

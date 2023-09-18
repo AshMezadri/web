@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        
+      .bandeira {
+        display: flex;
+        width: 400px;
+        height: 250px;
+        border: 1px solid;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #circle {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+      }
+
+      #holanda {
+        flex-direction: column;
+      }
+      .faixa {
+        height: 33.33%;
+        width: 400px;
+      }
+
+      #vermelho {
+        background-color: red;
+      }
+      #branco {
+        background-color: white;
+        
+      }
+      #azul {
+        background-color: blue;
+      }
+
+      #italia{
+        flex-direction: row;
+      }
+      .coluna{
+        height: 250px;
+        width: 33.33%;
+      }
+      #verde{
+        background-color: green;
+      }
+      #branco-italia{
+        background-color: white;
+      }
+      #vermelho-italia{
+        background-color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="japao" class="bandeira">
+      <div id="circle"></div>
+    </div>
+
+    <br />
+
+    <div id="holanda" class="bandeira">
+      <div id="vermelho" class="faixa"></div>
+      <div id="branco" class="faixa"></div>
+      <div id="azul" class="faixa"></div>
+    </div>
+
+    <br />
+
+    <div id="italia" class="bandeira">
+        <div id="verde" class="coluna"></div>
+        <div id="branco-italia" class="coluna"></div>
+        <div id="vermelho-italia" class="coluna"></div>
+      </div>
+
+  </body>
+</html>
