@@ -1,7 +1,8 @@
-let a = document.getElementById("inputA");
+let r = document.getElementById("inputR");
+let g = document.getElementById("inputG");
 let b = document.getElementById("inputB");
-let result = document.getElementById("result");
+let troca = document.getElementById("trocar");
 
-function somar(){
+function trocar(){
     result.innerHTML = Number(a.value) + Number(b.value);
 }
