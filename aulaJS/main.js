@@ -4,5 +4,5 @@ let b = document.getElementById("inputB");
 let troca = document.getElementById("trocar");
 
 function trocar(){
-    result.innerHTML = Number(a.value) + Number(b.value);
+    troca.style.backgroundColor = `rgb(${a.value},${b.value},${c.value});
 }
