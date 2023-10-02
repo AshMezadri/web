@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
 
-    <style>
-        #cont{
+        <style>
+        body{
             display: flex;
-            width: 80px;
-            height: 25px;
-            text-align: center;
-            justify-content: center;
+            flex-direction: column;
+            display: inline-block;
         }
+       
     </style>
+    </head>
+    <body>
+        <label for="inputA">Valor A:</label>
+        <input type="text" id="inputA">
+        <br>
+        <br>
+        <label for="inputB">Valor B:</label>
+        <input type="text" id="inputB">
 
-</head>
-<body>
-    <button onclick="contar()" id="cont">click here</button>
+        <p id="result"></p>
 
-    <script src="main.js"></script>
-</body>
+        <button id="soma" onclick="somar()">Soma</button>
+
+        <script src="main.js"></script>
+    </body>
 </html>

@@ -1,8 +1,7 @@
-console.log(window.location);
+let a = document.getElementById("inputA");
+let b = document.getElementById("inputB");
+let result = document.getElementById("result");
 
-let contador = document.getElementById("cont");
-let valor = 0;
-
-function contar(){
-    contador.innerHTML = valor++;
+function somar(){
+    result.innerHTML = Number(a.value) + Number(b.value);
 }
