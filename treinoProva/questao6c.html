@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .bandeira{
+            display: flex;
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            align-items: center;
+            background-color: rgb(236, 235, 235);
+        }
+
+        .circulo{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            justify-content: space-around;
+            margin-inline: auto;
+        }
+
+        #circulo1{
+            background-color: red;
+            transition: background-color 1s;
+        }
+        #circulo2{
+            background-color: blue;
+            transition: background-color 1s;
+
+        }#circulo3{
+            background-color: red;
+            transition: background-color 1s;
+
+        }
+
+        #circulo1:hover{
+            background-color: lightblue;
+
+        }
+        #circulo2:hover{
+            background-color: lightpink;
+
+        }
+        #circulo3:hover{
+            background-color: white;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="bandeira">
+        <div id="circulo1" class="circulo"></div>
+        <div id="circulo2" class="circulo"></div>
+        <div id="circulo3" class="circulo"></div>
+    </div>
+
+</body>
+</html>
