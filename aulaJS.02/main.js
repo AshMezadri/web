@@ -1,14 +1,17 @@
-let n1 = document.getElementById('input1');
-let n2 = document.getElementById('input2');
+let input1 = document.getElementById('input1');
+let input2 = document.getElementById('input2');
 let resultado = document.getElementById('resultado');
 
+function pares() {
 
-function calcular(){
+    let n1 = Number(input1.value);
+    let n2 = Number(input2.value);
+
+    for (let i = n1; i <= n2; i++) {
+        if (i % 2 == 0) {
+
+            resultado.innerHTML += " " + i;
+        }
+    }
     
-    let input1 = Number(n1.value);
-    let input2 = Number(n2.value);
-
-    soma = input1 + input2;
-
-    resultado.innerHTML = soma;
 }
