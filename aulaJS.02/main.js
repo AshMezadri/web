@@ -10,22 +10,29 @@ function add() {
 
 }
 
+function deletar(){
+
+    numeros.splice(index, 1);
+
+}
+
 function displayNotas(){
-    let paragrafoNovo;
+    let paragrafoNovo,divNova,buttonNovo;
     divLista.innerHTML = "";
 
     for (let index = 0; index < listaNotas.length; index++) {
 
+        divNova = document.createElement("div");
+        buttonNovo = document.createElement("button");
+        buttonNovo = deletar();
         paragrafoNovo = document.createElement("p");
         paragrafoNovo.innerHTML = listaNotas[index];
 
-        if(index%2==0){
-            paragrafoNovo.style.backgroundColor = "rgb(255,0,0)";
-        }else{
-            paragrafoNovo.style.backgroundColor = "rgb(0,0,0)";
-            paragrafoNovo.style.color = "rgb(255,255,255)";
-        }
+        divNova.appendChild(paragrafoNovo);
+        divNova.appendChild(buttonNovo);
 
-        divLista.append(paragrafoNovo);
+
+        document.getElementById("divLista").appendChild(divNova);
     }
 }
+
