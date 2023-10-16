@@ -1,17 +1,31 @@
-let input1 = document.getElementById('input1');
-let input2 = document.getElementById('input2');
-let resultado = document.getElementById('resultado');
+let note = document.getElementById('note');
+var listaNotas = [];
+let divLista = document.getElementById('divLista');
 
-function pares() {
+function add() {
 
-    let n1 = Number(input1.value);
-    let n2 = Number(input2.value);
+    let nota = note.value;
+    listaNotas.push(nota);
+    displayNotas();
 
-    for (let i = n1; i <= n2; i++) {
-        if (i % 2 == 0) {
+}
 
-            resultado.innerHTML += " " + i;
+function displayNotas(){
+    let paragrafoNovo;
+    divLista.innerHTML = "";
+
+    for (let index = 0; index < listaNotas.length; index++) {
+
+        paragrafoNovo = document.createElement("p");
+        paragrafoNovo.innerHTML = listaNotas[index];
+
+        if(index%2==0){
+            paragrafoNovo.style.backgroundColor = "rgb(255,0,0)";
+        }else{
+            paragrafoNovo.style.backgroundColor = "rgb(0,0,0)";
+            paragrafoNovo.style.color = "rgb(255,255,255)";
         }
+
+        divLista.append(paragrafoNovo);
     }
-    
 }
