@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+
+            .paleta {
+                display: flex;
+                justify-content: center;
+                margin: 20px;
+            }
+
+            .color {
+                width: 150px;
+                height: 200px;
+                margin: 10px;
+            }
+
+            #color-codes {
+                font-weight: bold;
+            }
+
+            button {
+                background-color: #0074d9;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            label {
+                display: block;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Gerador de Paleta de Cores</h1>
+        <div class="paleta">
+            <div id="color1" class="color"></div>
+            <div id="color2" class="color"></div>
+            <div id="color3" class="color"></div>
+        </div>
+        <div id="color-codes">
+            <p><span id="code1" class="color-code"></span></p>
+            <p><span id="code2" class="color-code"></span></p>
+            <p><span id="code3" class="color-code"></span></p>
+        </div>
+        <br>
+        <button id="button">Gerar Paleta</button>
+        <script src="Questao6.js"></script>
+
+    </body>
+</html>
