@@ -1,38 +1,38 @@
-function calculateFatorial() {
-    const numberInput = document.getElementById("number");
-    const fatorialResult = document.getElementById("fatorial-result");
+function calcularFatorial() {
+    const nInput = document.getElementById("number");
+    const fatorialResult = document.getElementById("fatorial");
 
-    const number = parseInt(numberInput.value);
-    if (isNaN(number)) {
+    const numero = parseInt(nInput.value);
+    if (isNaN(numero)) {
         fatorialResult.textContent = "Por favor, insira um número válido.";
     } else {
-        fatorialResult.textContent = `O fatorial de ${number} é ${calculateFactorial(number)}.`;
+        fatorialResult.textContent = `O fatorial de ${numero} é ${calcularFactorial(numero)}.`;
     }
 }
 
-function calculateFactorial(number) {
-    if (number <= 1) {
+function calcularFactorial(numero) {
+    if (numero <= 1) {
         return 1;
     } else {
-        return number * calculateFactorial(number - 1);
+        return numero * calcularFactorial(numero - 1);
     }
 }
 
-function calculateFibonacci() {
-    const numberInput = document.getElementById("number");
-    const fibonacciResult = document.getElementById("fibonacci-result");
+function calcularFibonacci() {
+    const nInput = document.getElementById("number");
+    const fibonacciResult = document.getElementById("fibonacci");
 
-    const number = parseInt(numberInput.value);
-    if (isNaN(number)) {
+    const numero = parseInt(nInput.value);
+    if (isNaN(numero)) {
         fibonacciResult.textContent = "Por favor, insira um número válido.";
     } else {
-        fibonacciResult.textContent = `A sequência de Fibonacci de ${number} termos é: ${calculateFibonacciSequence(number).join(", ")}`;
+        fibonacciResult.textContent = `A sequência de Fibonacci de ${numero} termos é: ${calcularFibonacciSequencia(numero).join(", ")}`;
     }
 }
 
-function calculateFibonacciSequence(number) {
+function calcularFibonacciSequencia(numero) {
     let sequence = [];
-    for (let i = 0; i < number; i++) {
+    for (let i = 0; i < numero; i++) {
         if (i <= 1) {
             sequence.push(i);
         } else {

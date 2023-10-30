@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            * , html, body, p {
+                box-sizing: border-box;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                margin-top: 10%;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            .calc {
+                display: grid;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            }
+
+            #input {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                color: #FDFEFE;
+                padding-right: 10px;
+                font-size: 25px;
+                text-align: right;
+                background-color: #223850;
+                transition: all 0.3s ease-in
+            }
+
+            #buttons {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                text-align: center;
+
+            }
+
+            .btn {
+                display: flex;
+                font-size: 20px;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 30px;
+                transition: all 0.3s ease-in;
+                border: 0.3px solid rgba(251, 253, 255, 0.171);
+
+            }
+
+            .zero {
+                grid-column: span 2;
+            }
+
+            .igual {
+                grid-row: span 2;
+            }
+
+            .num {
+                background-color: #223850;
+                color: #6885A7;
+            }
+
+            .num:hover {
+                background-color: #233B55;
+            }
+
+            .operacao {
+
+                background-color: #128094;
+                color: #ffffff;
+            }
+
+            .operacao:hover {
+                background-color: rgb(52, 155, 196) !important
+            }
+
+            .igual{
+                background-color: #e77c18;
+            }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="calc">
+                <input type="text" id="input" readonly>
+                <div id='buttons'>
+                    <button class="btn operacao" onclick="clearInput()">C</button>
+                    <button id="delete" class="btn operacao" onclick="eraseNum()">⌦</button>
+                    <button class="btn operacao" onclick="insertNum('/')">/</button>
+                    <button class="btn operacao" onclick="insertNum('*')">x</button>
+
+                    <button class="btn num" onclick="insertNum('7')">7</button>
+                    <button class="btn num" onclick="insertNum('8')">8</button>
+                    <button class="btn num" onclick="insertNum('9')">9</button>
+                    <button class="btn operacao " onclick="insertNum('-')">-</button>
+
+                    <button class="btn num" onclick="insertNum('4')">4</button>
+                    <button class="btn num" onclick="insertNum('5')">5</button>
+                    <button class="btn num" onclick="insertNum('6')">6</button>
+                    <button class="btn operacao" onclick="insertNum('+')">+</button>
+
+                    <button class="btn num" onclick="insertNum('1')">1</button>
+                    <button class="btn num" onclick="insertNum('2')">2</button>
+                    <button class="btn num" onclick="insertNum('3')">3</button>
+
+                    <button class="btn operacao igual" onclick="equalTo()">=</button>
+                    <button class="btn num zero" onclick="insertNum('0')">0</button>
+                    <button class="btn num" onclick="insertNum('.')">.</button>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
