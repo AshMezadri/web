@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEIQ</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <h1 class="logo-text">NEIQ</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#acoes">AÇÕES</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+                <li><a href="#updates">UPDATES</a></li>
+            </ul>
+        </nav>
+        <button id="modo" onclick="darkMode()">Alternar Modo</button>
+
+    </header>
+    
+    <main id="main">
+        <section id="home" style="margin-top: 80px;"> 
+            <h2 class="h2">Bem-vindo!</h2>
+            <p>É com satisfação que lhe damos as boas-vindas ao site oficial do Núcleo de Estudos de Identidade Queer do IFSC Campus Gaspar. As principais informações e dados para contato se encontram ao decorrer da página.</p>
+        </section>
+        
+        <section id="acoes">
+            <h2 class="h2" >Nossos ações dentro do IFSC</h2>
+            <ul>
+                <li>Promover ações educativas, como palestras e rodas de conversas</li>
+                <li>Servir como um espaço de acolhimento para membros da comunidade LGBTQIAP+</li>
+                <li>Criar materias educativos para serem usados em outras</li>
+            </ul>
+        </section>
+
+        <section id="sobre">
+            <h2 class="h2">Sobre Nós</h2>
+            <p>Nós somos um grupo criado em 2022, por alunos em sua maioria, e coordenados pelos professores Luiz Herculano e Fernando Mezadri. <br> O núcleo foi iniciado com os objetivos de acolher as pessoas queer do campus, além de ensinar sobre a comunidade LGBTQIAP+ para as pessoas do Campus.
+            </p>
+        </section>
+
+        <section id="contato">
+            <h2 class="h2">Contato</h2>
+            <p>
+                <img src="email.png" alt="Ícone de e-mail">
+                <a href="mailto:ifscqueer@gmail.com">ifscqueer@gmail.com</a>
+            </p>
+        </section>
+        
+
+        <section id="updates">
+            <h2 class="h2">Updates</h2>
+            <form id="form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button id="submit" type="button" onclick="showMessage()">Enviar</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <img src="logo.png" alt="logo do NEIQ">
+        <p>&copy; 2023 NEIQ IFSC Gaspar</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
