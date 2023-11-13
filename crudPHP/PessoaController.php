@@ -1,4 +1,8 @@
 <?php
+
+include_once "Pessoa.php";
+include_once "PessoaDAO.php";
+
 class PessoaController{
     public function __construct(){
 
@@ -25,7 +29,7 @@ class PessoaController{
 
     public function excluirPessoa($id){
     }
-    
+
     public function autenticarPessoa($id){
     }
 }

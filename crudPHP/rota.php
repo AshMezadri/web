@@ -3,8 +3,8 @@
 include_once "Pessoa.php";
 include_once "PessoaController.php";
 
-
 if(!isset($_POST['op'])){
+    echo "Operação não informada op";
     header ('Location: index.php');
     exit();
 }
@@ -14,11 +14,6 @@ switch ($op){
 
     case "cadastrar_usuario":
 
-        if(!isset($_POST['nome']) || !isset($_POST['email']) || !isset($_POST['senha'])){
-            header ('Location: index.php');
-            exit();
-        }
-        
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];

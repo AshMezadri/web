@@ -1,4 +1,8 @@
 <?php
+
+include_once "Database.php";
+include_once "PessoaController.php";
+
     class PessoaDAO{
         public function __construct(){
 
@@ -6,14 +10,19 @@
 
         //insert
         public function insert(Pessoa $pessoa){
-            $dao = new Database();
-            $conn = $dao->getConnection();
+            $db = new Database();
+            $conn = $db->getConnection();
 
             $sql="INSERT INTO pessoa (nome, email, senha) VALUES (:nome, :email, :senha)";
             $stmt=$conn->prepare($sql);
-            $stmt->bindParam(':nome',$pessoa->getNome());
-            $stmt->bindParam(':email',$pessoa->getEmail());
-            $stmt->bindParam(':senha',$pessoa->getSenha());
+
+            $nome=$pessoa->getNome();
+            $email=$pessoa->getEmail();
+            $senha=$pessoa->getSenha();
+
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
             return $stmt->execute();
         }
         //update
