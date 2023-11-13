@@ -20,6 +20,8 @@ switch ($op){
         $pessoaController = new PessoaController();
 
         $resultado = $pessoaController->cadastrarPessoa($nome, $email, $senha);
+
+        echo $resultado;
         break;
 
 }

@@ -15,10 +15,12 @@ class PessoaController{
         $pessoaDAO = new PessoaDAO();
 
         return $pessoaDAO->insert($pessoa);
-
     }
 
     public function listarPessoas(){
+        $pessoaDAO = new PessoaDAO();
+
+        return $pessoaDAO->selectAll();
     }
 
     public function getPessoa($id){   

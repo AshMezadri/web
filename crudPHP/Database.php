@@ -7,14 +7,14 @@
         private $connection;
 
         public function getConnection(){
-
+            
             $this->user="root";
             $this->password="aluno";
+            $this->database="crud";
             $this->host="localhost";
-            $this->database="aula";
-            $this->connection = new PDO ("mysql: host=$host;dbname=$database", $user, $password);
+            $this->connection = new PDO("mysql:host=$this->host;dbname=$this->database",$this->user,$this->password);
             
-            return $this -> connection;
+            return $this->connection;
         }
 
     }

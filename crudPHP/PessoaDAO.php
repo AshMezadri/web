@@ -13,7 +13,7 @@ include_once "PessoaController.php";
             $db = new Database();
             $conn = $db->getConnection();
 
-            $sql="INSERT INTO pessoa (nome, email, senha) VALUES (:nome, :email, :senha)";
+            $sql="INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
             $stmt=$conn->prepare($sql);
 
             $nome=$pessoa->getNome();
@@ -24,6 +24,21 @@ include_once "PessoaController.php";
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $senha);
             return $stmt->execute();
+        }
+
+        public function selectAll(){
+            $db = new Database();
+            $conn = $db->getConnection();
+
+            $sql="SELECT * FROM usuarios";
+            $stmt=$conn->prepare($sql);
+
+            $stmt->execute();
+
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+            return $result; 
         }
         //update
         //delete
