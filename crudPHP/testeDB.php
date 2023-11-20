@@ -1,10 +1,10 @@
-<?php
+<?php 
     include_once "Database.php";
     $conn = new Database();
-    if($conn->getConnection()){
+    if ($conn->getConnection()){
         echo "Conectado com sucesso";
     }else{
-        echo "Erro ao conectra";
+        echo "Erro ao conectar";
     }
 
 ?>

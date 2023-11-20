@@ -6,17 +6,15 @@
         private $database;
         private $connection;
 
-        public function getConnection(){
-            
+        public  function getConnection(){
+            //mysql_connect , mysqli_connect , PDO( "postgree")
             $this->user="root";
             $this->password="aluno";
-            $this->database="crud";
             $this->host="localhost";
-            $this->connection = new PDO("mysql:host=$this->host;dbname=$this->database",$this->user,$this->password);
-            
+            $this->database="crud";
+            $this->connection = new PDO("mysql:host=$this->host;dbname=$this->database", $this->user, $this->password);
             return $this->connection;
         }
 
     }
-
 ?>
