@@ -16,16 +16,19 @@
 
     if (isset($_GET['searchResults'])) {
         $searchResults = json_decode(urldecode($_GET['searchResults']), true);
-
         $listaPessoas = $searchResults;
     } else {
-        
         $controllerPessoa = new PessoaController();
         $listaPessoas = $controllerPessoa->listarPessoas();
     }
     ?>
 
     <div class="table-container">
+
+        <form action="rota.php" method="get" class="search-bar-container">
+            <input type="text" name="searchTerm" class="search-bar" placeholder="Pesquisar ID">
+            <button type="submit" class="search-button">Pesquisar</button>
+        </form>
 
         <table id="lista_usuarios">
             <thead>

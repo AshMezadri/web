@@ -9,3 +9,5 @@ CREATE TABLE usuarios(
     telefone VARCHAR(20) NOT NULL,
     senha VARCHAR (32) NOT NULL 
 )
+
+select * from usuarios;

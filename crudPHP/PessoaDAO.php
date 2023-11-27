@@ -99,19 +99,16 @@ class PessoaDAO
         return $usuario;
     }
 
-    public function pesquisar($searchTerm)
+    public function pesquisarPorId($id)
     {
         $db = new Database();
         $conn = $db->getConnection();
-        $searchTerm = "%{$searchTerm}%";
-        $sql = "SELECT * FROM usuarios WHERE nome LIKE :searchTerm OR email LIKE :searchTerm";
+        $sql = "SELECT * FROM usuarios WHERE id = :id";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':searchTerm', $searchTerm);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        var_dump($results);
-
-        return $results;
+        return $result;
     }
 }

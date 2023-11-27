@@ -57,9 +57,9 @@ class PessoaController
         return $usuario;
     }
 
-    public function pesquisarPessoas($pesquisa)
+    public function pesquisarPessoa($id)
     {
         $pessoaDAO = new PessoaDAO();
-        return $pessoaDAO->pesquisar($pesquisa);
+        return $pessoaDAO->pesquisarPorId($id);
     }
 }

@@ -43,12 +43,22 @@ switch ($op) {
         break;
 
     case "pesquisar":
-        $pesquisa = $_GET['pesquisa'];
-        $pessoaController = new PessoaController();
-        $listaPessoas = $pessoaController->pesquisarPessoas($pesquisa);
+        if (isset($_GET['id'])) {
+            $userId = $_GET['id'];
+            $pessoaController = new PessoaController();
+            $searchResult = $pessoaController->pesquisarPessoa($id);
 
-        header("Location: tela_listagem.php?resultadosPesquisa=" . urlencode(json_encode($listaPessoas)));
-        exit();
+            // Check if the result is found
+            if ($searchResult) {
+                $encodedResult = urlencode(json_encode($searchResult));
+                header("Location: tela_editar.php?id={$userId}");
+                exit();
+            } else {
+                echo "User not found.";
+            }
+        } else {
+            echo "ID is missing.";
+        }
         break;
 
     case "editar_usuario":
@@ -71,14 +81,16 @@ switch ($op) {
         break;
 
     case "deletar":
-        if (isset($_GET['id'])) {
-            $userIdToDelete = $_GET['id'];
+        if (isset($_POST['id'])) {
+            $userIdToDelete = $_POST['id'];
 
             $pessoaController = new PessoaController();
             $pessoaController->deletarPessoa($userIdToDelete);
 
             header("Location: tela_listagem.php");
             exit();
+        } else {
+            echo "Erro na exclusão. O ID do usuário não foi fornecido.";
         }
         break;
 

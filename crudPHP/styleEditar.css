@@ -5,13 +5,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align items to the center */
+    align-items: center;
+    margin-top: 20px;
 }
 
 .form {
@@ -19,18 +21,20 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-top: 20px; /* Add margin between Excluir button and form */
+    width: 450px;
+    text-align: left;
 }
 
 .div {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
     margin-bottom: 8px;
     color: #333;
+    font-weight: bold;
 }
 
 input {
@@ -43,8 +47,14 @@ input {
     margin-bottom: 10px;
 }
 
-button.salvar,
-button.excluir {
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
     width: calc(50% - 5px);
     padding: 12px;
     border: none;
@@ -53,21 +63,31 @@ button.excluir {
     font-size: 16px;
 }
 
-button.salvar {
+.salvar {
     background-color: #0c637e;
     color: #fff;
-    margin-right: 10px;
 }
 
-button.salvar:hover {
+.salvar:hover {
     background-color: #084e63;
 }
 
-button.excluir {
+.excluir {
     background-color: #c22222;
     color: #fff;
 }
 
-button.excluir:hover {
+.excluir:hover {
     background-color: #860101;
+}
+
+.back-btn {
+    background-color: #555;
+    color: #fff;
+    width: 100%; 
+    margin-top: 10px; 
+}
+
+.back-btn:hover {
+    background-color: #333;
 }
