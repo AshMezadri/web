@@ -2,13 +2,13 @@
 include_once "Pessoa.php";
 include_once "PessoaController.php";
 
-if (!isset($_POST['op'])) {
+if (!isset($_REQUEST['op'])) {
     echo "Operação não informada op";
     header('Location: index.php');
     exit();
 }
 
-$op = $_POST['op'];
+$op = $_REQUEST['op'];
 
 switch ($op) {
     case "cadastrar_usuario":
@@ -38,6 +38,21 @@ switch ($op) {
         } else {
             echo "Falha no login.";
         }
+        break;
+
+    case "pesquisar":
+        $pesquisa = $_REQUEST['search'];
+        $pessoaController = new PessoaController();
+        $listaPessoas = $pessoaController->pesquisarPessoas($pesquisa);
+
+        header("Location: tela_listagem.php?resultadosPesquisa=" . urlencode(json_encode($listaPessoas)));
+        exit();
+        break;
+
+    case "editar":
+        $idToEdit = $_REQUEST['id'];
+        header("Location: editar.php?id=$idToEdit");
+        exit();
         break;
 
     default:

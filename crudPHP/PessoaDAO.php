@@ -91,4 +91,15 @@ class PessoaDAO
 
         return $usuario;
     }
+
+    public function pesquisar($pesquisa)
+    {
+        $db = new Database();
+        $conn = $db->getConnection();
+        $sql = "SELECT * FROM usuarios WHERE nome LIKE :pesquisa OR email LIKE :pesquisa";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':pesquisa', "%$pesquisa%");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

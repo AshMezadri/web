@@ -7,19 +7,37 @@
     <link rel="stylesheet" href="styleListagem.css">
     <title>Listagem</title>
 </head>
+
 <body>
 
 <?php 
     include_once("PessoaController.php");
     include_once("Pessoa.php");
 
-    $controllerPessoa = new PessoaController();
-    $listaPessoas = $controllerPessoa->listarPessoas();
+    // Check if search results are present in the URL
+    if (isset($_GET['searchResults'])) {
+        // Decode the JSON-encoded search results
+        $searchResults = json_decode(urldecode($_GET['searchResults']), true);
+
+        // Use $searchResults as needed to display the search results
+        // For example, you can assign it to $listaPessoas
+        $listaPessoas = $searchResults;
+    } else {
+        // If no search results are present, proceed with the regular list
+        $controllerPessoa = new PessoaController();
+        $listaPessoas = $controllerPessoa->listarPessoas();
+    }
 ?>
 
 <div class="table-container">
-    <input type="text" class="search-bar" placeholder="Search by name or email">
-    
+    <form action="rota.php" method="get" class="search-form">
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" name="search" placeholder="Search by name or email">
+            <input type="hidden" name="op" value="pesquisar">
+            <button type="submit" class="search-button">Pesquisar</button>
+        </div>
+    </form>
+
     <table id="lista_usuarios">
         <thead>
             <tr>

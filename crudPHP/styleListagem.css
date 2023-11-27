@@ -26,7 +26,7 @@ body {
 
 #lista_usuarios th, #lista_usuarios td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px; 
     text-align: left;
 }
 
@@ -42,26 +42,47 @@ body {
 #lista_usuarios a {
     text-decoration: none;
     color: #0c637e;
+    font-weight: bold; 
 }
 
 #lista_usuarios a:hover {
     color: #084e63;
 }
 
-.search-bar {
-    width: 80%;
+.search-bar-container {
+    display: flex;
+    align-items: center;
     margin-top: 20px;
-    padding: 10px;
+}
+
+.search-bar {
+    width: 70%; 
+    padding: 12px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
 }
 
+.search-button {
+    background-color: #0c637e;
+    color: #fff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #084e63;
+}
+
 .add-button {
     background-color: #0c637e;
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;

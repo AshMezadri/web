@@ -47,5 +47,10 @@ class PessoaController {
 
         return $usuario;
     }
+
+    public function pesquisarPessoas($pesquisa) {
+        $pessoaDAO = new PessoaDAO();
+        return $pessoaDAO->pesquisar($pesquisa);
+    }
 }
 ?>
