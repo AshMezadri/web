@@ -19,6 +19,14 @@
         <input type="text" name="email" id="email" required>
     </div>
     <div class="div">
+        <label for="data">Data de Aniversário:</label>
+        <input type="date" name="data" id="data" required>
+    </div>
+    <div class="div">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" name="telefone" id="telefone" required>
+    </div>
+    <div class="div">
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha" required>
     </div>

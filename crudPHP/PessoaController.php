@@ -2,24 +2,29 @@
 include_once "Pessoa.php";
 include_once "PessoaDAO.php";
 
-class PessoaController {
-    
-    public function __construct() {
+class PessoaController
+{
+
+    public function __construct()
+    {
     }
 
-    public function cadastrarPessoa($nome, $email, $senha) {
+    public function cadastrarPessoa($nome, $email, $data, $telefone, $senha)
+    {
         $pessoa = new Pessoa();
-        $pessoa->setAll(null, $nome, $email, $senha);
+        $pessoa->setAll(null, $nome, $email, $data, $telefone, $senha);
         $pessoaDAO = new PessoaDAO();
         return $pessoaDAO->insert($pessoa);
     }
 
-    public function listarPessoas() {    
+    public function listarPessoas()
+    {
         $pessoaDAO = new PessoaDAO();
         return $pessoaDAO->selectAll();
     }
 
-    public function getPessoa($id) {
+    public function getPessoa($id)
+    {
         $pessoaDAO = new PessoaDAO();
 
         $usuario = $this->$pessoaDAO->byId($id);
@@ -31,26 +36,30 @@ class PessoaController {
         }
     }
 
-    public function editarPessoa($id) {
-        $pessoaData = $this->getPessoa($id);
-    }
-
-    public function excluirPessoa($id) { 
+    public function editarPessoa($id, $nome, $email, $data, $telefone, $senha)
+    {
         $pessoaDAO = new PessoaDAO();
-
-        $isDeleted = $this->$pessoaDAO->delete($id);
+        return $pessoaDAO->update($id, $nome, $email, $data, $telefone, $senha);
     }
 
-    public function autenticarPessoa($email, $senha) {
+
+    public function deletarPessoa($userId)
+    {
+        $pessoaDAO = new PessoaDAO();
+        $pessoaDAO->delete($userId);
+    }
+
+    public function autenticarPessoa($email, $senha)
+    {
         $pessoaDAO = new PessoaDAO();
         $usuario = $pessoaDAO->autenticar($email, $senha);
 
         return $usuario;
     }
 
-    public function pesquisarPessoas($pesquisa) {
+    public function pesquisarPessoas($pesquisa)
+    {
         $pessoaDAO = new PessoaDAO();
         return $pessoaDAO->pesquisar($pesquisa);
     }
 }
-?>

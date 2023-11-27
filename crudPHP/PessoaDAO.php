@@ -13,27 +13,34 @@ class PessoaDAO
     {
         $db = new Database();
         $conn = $db->getConnection();
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
+        $sql = "INSERT INTO usuarios (nome, email, data, telefone, senha) VALUES (:nome, :email, :data, :telefone, :senha)";
         $stmt = $conn->prepare($sql);
         $nome = $pessoa->getNome();
         $email = $pessoa->getEmail();
+        $data = $pessoa->getData();
+        $telefone = $pessoa->getTelefone();
         $senha = $pessoa->getSenha();
+
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':data', $data);
+        $stmt->bindParam(':telefone', $telefone);
         $stmt->bindParam(':senha', $senha);
+
         return $stmt->execute();
     }
-
     //update
-    public function update($id, $nome, $email, $senha)
+    public function update($id, $nome, $email, $data, $telefone, $senha)
     {
         $db = new Database();
         $conn = $db->getConnection();
-        $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = :id";
+        $sql = "UPDATE usuarios SET nome = :nome, email = :email, data = :data, telefone = :telefone, senha = :senha WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':data', $data);
+        $stmt->bindParam(':telefone', $telefone);
         $stmt->bindParam(':senha', $senha);
 
         $stmt->execute();
@@ -92,14 +99,19 @@ class PessoaDAO
         return $usuario;
     }
 
-    public function pesquisar($pesquisa)
+    public function pesquisar($searchTerm)
     {
         $db = new Database();
         $conn = $db->getConnection();
-        $sql = "SELECT * FROM usuarios WHERE nome LIKE :pesquisa OR email LIKE :pesquisa";
+        $searchTerm = "%{$searchTerm}%";
+        $sql = "SELECT * FROM usuarios WHERE nome LIKE :searchTerm OR email LIKE :searchTerm";
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':pesquisa', "%$pesquisa%");
+        $stmt->bindParam(':searchTerm', $searchTerm);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        var_dump($results);
+
+        return $results;
     }
 }

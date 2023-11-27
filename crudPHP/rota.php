@@ -14,9 +14,11 @@ switch ($op) {
     case "cadastrar_usuario":
         $nome = $_POST['nome'];
         $email = $_POST['email'];
+        $data = $_POST['data'];
+        $telefone = $_POST['telefone'];
         $senha = $_POST['senha'];
         $pessoaController = new PessoaController();
-        $resultado = $pessoaController->cadastrarPessoa($nome, $email, $senha);
+        $resultado = $pessoaController->cadastrarPessoa($nome, $email, $data, $telefone, $senha);
 
         if ($resultado) {
             header('Location: tela_listagem.php');
@@ -41,7 +43,7 @@ switch ($op) {
         break;
 
     case "pesquisar":
-        $pesquisa = $_REQUEST['search'];
+        $pesquisa = $_GET['pesquisa'];
         $pessoaController = new PessoaController();
         $listaPessoas = $pessoaController->pesquisarPessoas($pesquisa);
 
@@ -49,10 +51,35 @@ switch ($op) {
         exit();
         break;
 
-    case "editar":
-        $idToEdit = $_REQUEST['id'];
-        header("Location: editar.php?id=$idToEdit");
-        exit();
+    case "editar_usuario":
+        $idEditar = $_POST['id'];
+        $nomeEditar = $_POST['nome'];
+        $emailEditar = $_POST['email'];
+        $dataEditar = $_POST['data'];
+        $telefoneEditar = $_POST['telefone'];
+        $senhaEditar = $_POST['senha'];
+
+        $pessoaController = new PessoaController();
+        $resultado = $pessoaController->editarPessoa($idEditar, $nomeEditar, $emailEditar, $dataEditar,  $telefoneEditar, $senhaEditar);
+
+        if ($resultado) {
+            header('Location: tela_listagem.php');
+            exit();
+        } else {
+            echo "Falha na edição.";
+        }
+        break;
+
+    case "deletar":
+        if (isset($_GET['id'])) {
+            $userIdToDelete = $_GET['id'];
+
+            $pessoaController = new PessoaController();
+            $pessoaController->deletarPessoa($userIdToDelete);
+
+            header("Location: tela_listagem.php");
+            exit();
+        }
         break;
 
     default:
@@ -60,4 +87,3 @@ switch ($op) {
         header('Location: index.php');
         exit();
 }
-?>
