@@ -28,7 +28,8 @@ if (isset($_GET['id'])) {
 
     <div class="container">
 
-        <form id="dados_usuarios" action="rota.php" method="post" class="form">
+        <form id="editar_form" action="rota.php" method="post" class="form">
+
             <h2>Editar Usuário</h2>
 
             <div class="div">
@@ -61,15 +62,18 @@ if (isset($_GET['id'])) {
                 <input type="password" name="senha" id="senha" required>
             </div>
 
-            <input type="hidden" name="id" value="<?= $userId; ?>">
-            
-            <input type="text" name="op" value="deletar" hidden>
-            <button type="submit" class="salvar">Salvar</button>
-
-            <button type="submit" class="excluir">Excluir</button>
-
-            <a href="tela_listagem.php"><button type="button" class="back-btn">Voltar para a Lista</button></a>
+            <input type="hidden" name="op" value="editar_usuario">
+            <button type="submit" class="salvar" >Salvar</button>
         </form>
+
+        <form id="excluir_form" action="rota.php" method="post" class="form">
+            <input type="hidden" name="id" value="<?= $userId; ?>">
+            <input type="hidden" name="op" value="deletar">
+            <button type="submit" class="excluir">Excluir</button>
+        </form>
+
+        <a href="tela_listagem.php"><button type="button" class="back-btn">Voltar para a Lista</button></a>
+
     </div>
 
 </body>
