@@ -43,15 +43,14 @@ switch ($op) {
         break;
 
     case "pesquisar":
-        if (isset($_GET['id'])) {
-            $userId = $_GET['id'];
+        if (isset($_GET['searchTerm'])) {
+            $userId = $_GET['searchTerm'];
             $pessoaController = new PessoaController();
-            $searchResult = $pessoaController->pesquisarPessoa($id);
+            $searchResult = $pessoaController->pesquisarPessoa($userId);
 
-            // Check if the result is found
             if ($searchResult) {
                 $encodedResult = urlencode(json_encode($searchResult));
-                header("Location: tela_editar.php?id={$userId}");
+                header('Location: tela_editar.php?id=' . $userId);
                 exit();
             } else {
                 echo "User not found.";
@@ -60,6 +59,7 @@ switch ($op) {
             echo "ID is missing.";
         }
         break;
+
 
     case "editar_usuario":
         $idEditar = $_POST['id'];

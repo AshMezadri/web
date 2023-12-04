@@ -27,6 +27,7 @@
 
         <form action="rota.php" method="get" class="search-bar-container">
             <input type="text" name="searchTerm" class="search-bar" placeholder="Pesquisar ID">
+            <input type="text" name="op" value="pesquisar" hidden>
             <button type="submit" class="search-button">Pesquisar</button>
         </form>
 

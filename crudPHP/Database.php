@@ -7,7 +7,7 @@
         private $connection;
 
         public  function getConnection(){
-            //mysql_connect , mysqli_connect , PDO( "postgree")
+
             $this->user="root";
             $this->password="aluno";
             $this->host="localhost";
